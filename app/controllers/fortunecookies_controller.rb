@@ -1,0 +1,2 @@
+class FortunecookiesController < ApplicationController
+end

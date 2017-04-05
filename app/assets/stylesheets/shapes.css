@@ -1,0 +1,103 @@
+/*general style*/
+body{
+	background-color:lightyellow;
+}
+
+p{
+	color:pink;
+}
+/*navigations*/
+
+nav li{
+
+	float:right;
+}
+
+nav li a{
+	margin:10px;
+	text-decoration:none;
+	padding:5px 20px;
+}
+
+nav a {
+	display:block;
+	background-color:yellow;
+}
+
+nav a:hover{
+	background-color:green;
+}
+
+
+/*square*/
+
+#square{
+	border:5px solid green;
+	padding:3px;
+	margin:20px;
+	background-color:blue;
+	width:100px;
+	height:100px;
+}
+
+#square:hover{
+	border-radius:0 100%;
+}
+
+
+
+/*resctangles*/
+
+#rectangle{
+	background-color:blue;
+	border:5px solid green;
+	padding:3px;
+	margin:20px;
+	width:200px;
+	height:100px;
+	}
+
+#rectangle:hover{
+	-webkit-transform:skew(30deg, 20deg);
+}
+/*circles*/
+
+#circle{
+	border:5px solid green;
+	padding:3px;
+	margin:20px;
+	background-color:blue;
+	width:100px;
+	height:100px;
+	border-radius:50%;
+}
+
+#circle:hover{
+	border-radius:10%;
+}
+
+/*triangle*/
+#triangle{
+	margin:20px;
+	width:0px;
+	height:0px;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 200px solid blue;
+}
+
+#triangle:hover{
+	-webkit-transform:skew(30deg, 20deg);
+}
+/*divs*/
+
+div{
+	float:right;
+	margin:200px 0px; padding:0px;
+	text-align:center;
+}
+
+
+#main{
+	text-align:center;
+}

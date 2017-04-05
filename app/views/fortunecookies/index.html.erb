@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
+	<script src="assets/jquery.min.js"></script>
+
+
+<style>
+	.pinkfc, .fancyfc, .greenfc{
+	display:inline-block;
+    vertical-align:top;
+     }
+
+	h1{
+	color:red;
+	font-family: 'Philosopher', serif;
+    }
+    
+    p{
+    	display:none;
+    }    
+</style>
+
+</head>
+	<body>
+       <h1> Lets Open Your Fortune </h1>
+       <p> Click to see if you are lucky </p>
+
+
+<div class="img-set">
+
+	<div class="pinkfc">
+		<img src="assets/pink-white-fortune-cookie.jpg" height="200" width="200">
+	</div>
+
+	<div class="fancyfc">
+		<img src="assets/green-fortune-cookie.jpg" height="300" width="300">
+	</div>
+
+	<div class="greenfc">
+		<img src="assets/green-fortune-cookie.jpg" height="400" width="400">
+	</div>
+
+</div>
+
+
+<script> 
+
+//this is what I managed to reduce to that almost does the same, except I need to figure out how to attach different text to each class//
+
+$(document).ready(function(){
+	$(".pinkfc,.fancyfc,.greenfc").click(function(){
+	$(this).fadeOut(2000);
+	$(this).text("you are lucky");
+	$(this).css({'color':'#0000ff', 'font-size':'300%'});
+
+});
+});
+
+
+//code below was written to show difference messages
+
+// $(document).ready(function() {
+// 	$(".pinkfc").click(function(){
+// 	$(this).fadeOut(2000);
+// 	$(this).text('you are lucky');
+// 	$(this).css({'color':'#0000ff', 'font-size':'300%'});
+
+// });
+// });
+
+// $(document).ready(function() {
+// 	$(".fancyfc").click(function(){
+// 	$(this).fadeOut(2000);
+// 	$(this).text('you are pretty lucky');
+// 	$(this).css({'color':'#ff33cc', 'font-size':'300%'});
+
+// });
+// });
+
+// $(document).ready(function() {
+// 	$(".greenfc").click(function(){
+// 	$(this).fadeOut(2000);
+// 	$(this).text('you are very lucky')
+// 	$(this).css({'color':'#009900', 'font-size':'300%'})
+// });
+// });
+
+</script>
+	
+	</body>
+</html>

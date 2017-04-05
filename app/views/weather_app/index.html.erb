@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<title>IOS 7</title>
+
+<style>
+body {
+	background-image:url("http://cdn.webiconset.com/wp-content/uploads/2011/10/full-weather-icons.png");
+	font-family:Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	colro:white;
+}
+
+
+
+.weather {
+	position: relative;
+	width: 400px;
+	height:900px;
+	background:#69B0FB;
+	margin: 0px auto;
+}
+
+.group {
+	padding: 15px;
+	border-bottom: 1px solid #b1dafa;
+}
+
+.clear {
+	clear: both;
+}
+
+form {
+	padding:20px;
+	width:500;
+
+}
+
+.form-control {
+	width:200px;
+	height:35px;
+}
+
+input {
+	font-size:18px;
+}
+
+.loading {
+	display: none;
+	font-size: 18px;
+	text-align: 60px 0;
+}
+
+.loading img {
+	verticla-align: middle;
+	margin-left: 5px;
+}
+
+.now {
+	padding: 60px 0 30px 0;
+	text-align: center;
+}
+
+.now h1 {
+	font-size: 50px;
+	margin-bottom: 5px;
+}
+
+.now h2 {
+	font-size: 72px;
+}
+
+.today header {
+
+	padding: 15px;
+	text-align: right;
+}
+</style>
+ 
+</head>
+
+<body>
+
+	<article class="weather thunderstorm">
+		<form action"#">
+			<input type="text" class="form-control" placeholder="Type a location ...">
+		</form>
+
+		<header class="now">
+			<h1>Chicago</h1>
+
+			<h2><span><%= $temp %></span>&deg</h2>
+		</header>
+
+		<div class="loading">Loading<img src="http://www.ajaxload.info/cache/00/99/CC/FF/FF/FF/24-0.gif">
+		</div>
+
+	</article>
+
+	<script>
+	
+	var $form = $("form"),
+		$input = $form.find("input"),
+		$city = $(".now h1"),
+		$temp = $(".now h2 span");
+		
+
+		var myfunction = function(city){
+
+			
+		    var data = {
+		    	q: city,
+		    	units: "imperial"
+
+		    };
+
+		    if (city) {
+		    	$.getJSON("http://api.openweathermap.org/data/2.5/weather?callback=?", data, function (response, status){
+
+		    		$city.text(response.name);
+		    		
+		    		$temp.text(Math.round(response.main.temp));
+		    	});
+
+
+		    }
+		    return false;
+
+		}
+
+
+    
+	$form.submit(function () {
+		var city = $.trim($input.val());
+		return myfunction(city);
+	});
+
+	
+
+	$(document).ready(function(){ 
+
+		return myfunction("chicago");
+     
+	});
+
+      
+	</script>
+
+
+	</body>
+</html>

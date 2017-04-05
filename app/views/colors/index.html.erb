@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="colors.css">
+	<script src="assets/jquery.min.js"></script>
+
+<style>
+
+h1
+{
+	color:red;
+}
+
+
+
+body{
+	text-align:center;
+
+}
+
+button
+{
+	background-color:red;
+	width:150px;
+	height:60px;
+}
+
+</style>
+
+</head>
+	<body>
+		<h1>Hello World</h1> 
+    	<button> <h2>Click Me</h2> </button>
+
+	<script>
+     $(document).ready(function(){
+       $("button").on("click", function(){
+       	var red = Math.floor(Math.random() * 255)
+		var blue = Math.floor(Math.random() * 255)
+		var green = Math.floor(Math.random() * 255)
+       	$("body").css({'background-color':'rgb('+red + ' ,'+ green +', '+ blue +')' });
+		});
+     });
+    </script>
+  
+    </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+   img{
+   	width:300px;
+   	height:300px;
+   	display:none;
+   }
+
+   p:hover{
+    color:purple;
+   }
+
+   ul{
+    float:left;
+   }
+
+   #clickMe1, #clickMe2, #clickMe3{
+   	background-color:#daa520;
+   	padding:20px;
+   	text-align:center;
+   	width:300px;
+   	display:block;
+   	border:2px solid #000;
+
+
+   }
+
+    #pictureframe1, #pictureframe2, #pictureframe3{
+    background:#daa520;
+    padding:20px;
+    text-aligh:center;
+    width:300px;
+    display:none;
+    border:2px solid #000;
+   }
+
+	</style>
+	<script src="assets/jquery.min.js"></script>
+</head>
+<body>
+	
+	
+		<ul>
+    		<div id="clickMe1"> 
+    			<h2>Necklaces</h2>
+    			<p>Click to see Jewellery<p>
+        </div>
+
+    		<div id="pictureframe1">
+    		  <%= image_tag("handmade-jewellery.jpg")%>
+    		  <p> $99.99 <p>
+    		</div>
+    </ul>
+    		
+    <ul>
+    		<div id="clickMe2"> 
+    			<h2>Earrings</h2>
+    			<p>Click to see Jewellery<p>
+            </div>
+
+    		<div id="pictureframe2">
+    		  <%= image_tag("pearl-earrings.jpg")%>
+    		  <p> $39.99 <p>
+    		</div>
+    </ul>
+
+
+    <ul>
+    		<div id="clickMe3"> 
+    			<h2>Braceletes</h2>
+    			<p>Click to see Jewellery<p>
+        </div>
+
+    		<div id="pictureframe3">
+    		  <%= image_tag("elephant-bracelet.jpg")%>
+    		  <p> $29.99 <p>
+    		</div>
+    </ul>
+
+	
+
+
+
+<script>
+
+//this is what I managed to reduced to later
+$(document).ready(function(){
+	$("#clickMe1,#clickMe2,#clickMe3").click(function(){
+		$("img").fadeIn(1000);
+    $(this).parent().children().next().slideToggle("slow");
+    console.log($(this).parent().children());
+    
+    });
+
+});
+
+//code below is my first atempt//
+
+// $(document).ready(function(){
+//   $("#clickMe1").on("click",function(){
+//     $("img").fadeIn(1000);
+//     $("#pictureframe1").slideToggle("slow");
+//   });
+
+// });
+
+
+// $(document).ready(function(){
+//   $("#clickMe2").on("click",function(){
+//     $("img").fadeIn(1000);
+//     $("#pictureframe2").slideToggle("slow");
+//   });
+
+// });
+
+
+// $(document).ready(function(){
+//   $("#clickMe3").on("click",function(){
+//     $("img").fadeIn(1000);
+//     $("#pictureframe3").slideToggle("slow");
+//   });
+
+// });
+
+</script>
+
+	</body>
+	</html>
